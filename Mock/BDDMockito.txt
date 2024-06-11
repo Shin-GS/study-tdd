@@ -1,5 +1,5 @@
 BDDMockito
- - Mockito 내에 존재하는 DBBMockito 클래스를 말한다.
+ - Mockito 내에 존재하는 BDDMockito 클래스를 말한다.
  - 기존 Mockito에서는 given 단계에서 when을 사용하여 Mock을 만드므로 논리적으로 맞지 않은 부분이 있다.
    이를 해결하여 BDD 지향적인 개발을 가능하게 한 것이 BDDMockito이다.
 

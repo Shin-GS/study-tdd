@@ -1,4 +1,4 @@
-DBB
+BDD
  - Behavior Driven Development
  - TDD에서 파생된 개발 방법
  - 함수 단위의 테스트에 집중하기보다 시나리오에 기반한 테스트케이스(TC) 자체에 집중하여 테스트한다.
