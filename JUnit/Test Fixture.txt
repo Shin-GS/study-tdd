@@ -1,0 +1,24 @@
+Test Fixture
+ - 테스트를 위해 원하는 상태로 고정시킨 일련의 객체
+ - 중복 발생되는 행위를 고정시켜 한곳에서 관리하는 개념
+ - Fixture : 고정물, 고정되어 있는 물체
+
+Test Fixture 메소드
+ - @BeforeAll : 테스트 메소드 시작 전 1번 실행
+ - @AfterAll : 테스트 메서드 종료 후 1번 실행
+ - @BeforeEach : 각 테스트 메소드 시작 전 실행
+ - @AfterEach : 각 테스트 메소드 종료 후 실행
+
+*테스트의 독립성 유지를 위해 여러 테스트에서 동시에 사용하는 객체를 Test Fixture로 구현하는 것은 주의해야한다.
+
+ex)
+private Money f12CHF_fixture;
+private Money f14CHF_fixture;
+private Money f28USD_fixture;
+
+@BeforeAll
+public void setUp() {
+    f12CHF_fixture= new Money(12, "CHF");
+    f14CHF_fixture= new Money(14, "CHF");
+    f28USD_fixture= new Money(28, "USD");
+}

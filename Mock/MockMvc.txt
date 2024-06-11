@@ -1,0 +1,25 @@
+MockMvc
+ - Mock(가짜) 객체를 사용해 스프링 MVC 동작을 재현할 수 있는 테스트 프레임워크
+
+ex)
+@WebMvcTest(controllers = EmployeeController.class)
+class EmployeeControllerTest {
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private EmployeeService employeeService;
+
+    @DisplayName("직원 id 가져오기 테스트")
+    @Test
+    public void getEmployeeId() throws Exception
+    {
+        mvc.perform(
+            MockMvcRequestBuilders
+                .get("/api/employee/1")
+         )
+        .andDo(MockMvcResultHandler.print())
+        .andExpect(status().isOk())
+        .andExpect(MockMvcResultMatchers.jsonPath("$.employeeId").value(1));
+    }
+}
